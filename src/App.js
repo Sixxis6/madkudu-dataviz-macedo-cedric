@@ -3,10 +3,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
+import { Navbar, Footer, ThemeSettings, Sidebar } from "./components";
+import { Species, ColumnChart, PieChart, ScatterChart } from "./pages";
+
+import { useStateContext } from "./contexts/ContextProvider";
+
 import "./App.css"
 
 const App = () => {
-    const activeMenu = true;
+    const { activeMenu } = useStateContext();
+
   return (
       <div data-testid="div-test" >
           <BrowserRouter>
@@ -17,27 +23,32 @@ const App = () => {
                                   className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
                                   style={{background: "blue",
                                   borderRadius: '50%'}}>
-                              <FiSettings></FiSettings>
+                              <FiSettings />
                           </button>
                       </TooltipComponent>
                   </div>
-                  { activeMenu ? (<div data-testid="sidebar-test"className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">Sidebar</div>)
-                      : (<div className="w-0 dark:bg-secondary-dark-bg">SideBar w-0</div>
+                  { activeMenu ? (<div data-testid="sidebar-test"className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
+                          <Sidebar /> </div>)
+                      : (<div className="w-0 dark:bg-secondary-dark-bg">
+                              <Sidebar /> </div>
                   )}
                   <div className={
                       `dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72' : 'flex-2'}`}>
                       <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
-                          Navbar
+                          <Navbar />
                       </div>
                   </div>
                   <div>
                       <Routes>
-                          <Route path="/" element="Placeholder"></Route>
-                          <Route path="/" element="Placeholder 2"></Route>
-                          <Route path="/" element="Placeholder 3"></Route>
-                          <Route path="/" element="Placeholder 4"></Route>
+                          {/* Pages */}
+                          <Route path="/species" element={<Species />}></Route>
+                          {/* Charts */}
+                          <Route path="/columnchart" element={<ColumnChart />}></Route>
+                          <Route path="/piechart" element={<PieChart />}></Route>
+                          <Route path="/scatterchart" element={<ScatterChart />}></Route>
                       </Routes>
                   </div>
+
               </div>
           </BrowserRouter>
       </div>
