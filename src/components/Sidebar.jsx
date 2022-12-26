@@ -8,8 +8,13 @@ import { useStateContext } from "../contexts/ContextProvider";
 import madkuduLogo from '../data/madkudu.png'
 
 const Sidebar = () => {
-    const { activeMenu, setActiveMenu } = useStateContext();
-    const currentColor = true;
+    const { activeMenu, setActiveMenu, screenSize, currentColor, currentMode } = useStateContext();
+
+    const handleCloseSideBar = () => {
+        if(activeMenu && screenSize <= 900) {
+            setActiveMenu(false)
+        }
+    }
 
     const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lh text-white text-md m-2';
     const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2'
@@ -18,9 +23,9 @@ const Sidebar = () => {
         <div className="Sidebar ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
             {activeMenu && (<>
                 <div className="flex justify-between items-center">
-                    <Link to="/" onClick={() => setActiveMenu(false)}
-                    className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight darl:text-white text-slate-900">
-                        <img src={madkuduLogo} className="w-11 h-11" />
+                    <Link to="/" onClick={() => handleCloseSideBar(false)}
+                    className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+                        {currentMode === 'Light' && <img src={madkuduLogo} className="w-11 h-11" />}
                         Madkudu Dataviz
                     </Link>
                     <TooltipComponent content="Menu" position="BottomCenter">
@@ -39,9 +44,9 @@ const Sidebar = () => {
                                 <NavLink
                                     to={`/${link.name}`}
                                     key={link.name}
-                                    onClick={() => {}}
+                                    onClick={handleCloseSideBar}
                                     style={({ isActive }) => ({
-                                        backgroundColor: isActive ? currentColor : '',
+                                        backgroundColor: isActive ? currentColor : ''
                                     })}
                                     className={({ isActive }) => (isActive ? activeLink : normalLink)}
                                 >

@@ -34,7 +34,7 @@ it('Sidebar has Pages and Charts as link categories', () => {
     expect(container.querySelector('div').textContent).toContain('Pages')
     expect(container.querySelector('div').textContent).toContain('Charts')
 })
-it('Sidebar has Species as Pages link', () => {
+it('Sidebar has species as Pages link', () => {
     const { container } = render(
         <StateContext.Provider value={{
             activeMenu: true

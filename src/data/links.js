@@ -1,8 +1,7 @@
-import {RiContactsLine, RiStockLine} from "react-icons/ri";
-import {AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock} from "react-icons/ai";
-import {FiPieChart} from "react-icons/fi";
-import {BsBarChart} from "react-icons/bs";
-import {GiLouvrePyramid} from "react-icons/gi";
+import { RiContactsLine } from "react-icons/ri";
+import { AiOutlineBarChart } from "react-icons/ai";
+import { FiPieChart } from "react-icons/fi";
+import { BsBarChart } from "react-icons/bs";
 import React from "react";
 
 export const links = [
@@ -19,31 +18,15 @@ export const links = [
         title: 'Charts',
         links: [
             {
-                name: 'area',
-                icon: <AiOutlineAreaChart />,
-            },
-            {
-                name: 'bar',
-                icon: <AiOutlineBarChart />,
-            },
-            {
                 name: 'pie',
                 icon: <FiPieChart />,
             },
             {
-                name: 'financial',
-                icon: <RiStockLine />,
-            },
-            {
-                name: 'color-mapping',
+                name: 'column',
                 icon: <BsBarChart />,
             },
             {
-                name: 'pyramid',
-                icon: <GiLouvrePyramid />,
-            },
-            {
-                name: 'stacked',
+                name: 'scatter',
                 icon: <AiOutlineBarChart />,
             },
         ],
