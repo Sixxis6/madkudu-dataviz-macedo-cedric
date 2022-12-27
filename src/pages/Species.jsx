@@ -1,6 +1,6 @@
 import React from 'react'
 import { GridComponent, ColumnDirective, ColumnsDirective, Resize, Sort,
-    ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject, Search, Toolbar } from "@syncfusion/ej2-react-grids";
+    ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject,  Toolbar } from "@syncfusion/ej2-react-grids";
 import { species } from '../data/mock-data'
 import { Header } from "../components";
 import { SpeciesGrid } from "../data/dummy";

@@ -2,8 +2,6 @@ import React, { createContext, useContext, useState} from "react";
 
 export const StateContext = createContext();
 
-const initState = {}
-
 export const ContextProvider = ({children}) => {
 
     const [activeMenu, setActiveMenu] = useState(true);

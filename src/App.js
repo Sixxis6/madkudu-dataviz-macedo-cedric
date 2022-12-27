@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -7,7 +7,7 @@ import { Navbar, ThemeSettings, Sidebar } from "./components";
 import { Species } from "./pages";
 
 import { useStateContext } from "./contexts/ContextProvider";
-import { ColumnChart, PieChart, ScatterChart } from "./pages";
+import { PieChart, ScatterChart } from "./pages";
 
 
 import "./App.css"
@@ -63,7 +63,6 @@ const App = () => {
                                 {/* Pages */}
                                 <Route path="/species" element={(<Species />)} />
                                 {/* Charts */}
-                                <Route path="/column" element={(<ColumnChart />)} />
                                 <Route path="/pie" element={(<PieChart />)} />
                                 <Route path="/scatter" element={(<ScatterChart />)} />
                             </Routes>

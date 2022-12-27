@@ -25,7 +25,7 @@ const Sidebar = () => {
                 <div className="flex justify-between items-center">
                     <Link to="/" onClick={() => handleCloseSideBar(false)}
                     className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-                        {currentMode === 'Light' && <img src={madkuduLogo} className="w-11 h-11" />}
+                        {currentMode === 'Light' && <img alt='Logo' src={madkuduLogo} className="w-11 h-11" />}
                         Madkudu Dataviz
                     </Link>
                     <TooltipComponent content="Menu" position="BottomCenter">

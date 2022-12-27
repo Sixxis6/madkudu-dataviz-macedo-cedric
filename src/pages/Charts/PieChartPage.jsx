@@ -1,5 +1,5 @@
 import React from 'react'
-import { pieChartData, hornPercentageCalculation } from '../../data/dummy';
+import {  hornPercentageCalculation } from '../../data/dummy';
 import { Header, Pie as PieChart } from '../../components';
 import { species } from "../../data/mock-data";
 
